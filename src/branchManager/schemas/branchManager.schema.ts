@@ -12,20 +12,30 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 })
 export class BranchManager {
   @Prop()
-  itemName: string;
+  branchManagerId: string;
+
   @Prop()
-  itemCode: string;
+  branchManagerFirstName: string;
+
   @Prop()
-  quantity: string;
+  branchManagerLastName: string;
+
   @Prop()
-  supply: string;
+  branchManagerEmail: string;
+
   @Prop()
-  date: string;
+  branchManagerAddress: string;
+
   @Prop()
-  unitPrice: string;
+  branchManagerPhone: string;
+
   @Prop()
-  sellPrice: string;
+  branchManagerDoB: string;
+
   @Prop()
-  action: string;
+  branchManagerGender: string;
+
+  @Prop()
+  branchManagerBranch: string;
 }
 export const BranchManagerSchema = SchemaFactory.createForClass(BranchManager);
