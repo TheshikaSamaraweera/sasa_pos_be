@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { BranchModule } from './branch/branch.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { BranchManagerModule } from './branchManager/branchManager.module';
 
 @Module({
   imports: [
@@ -11,8 +11,8 @@ import { BranchModule } from './branch/branch.module';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.DB_URI),
-    BranchModule,
+    MongooseModule.forRoot(process.env.MONGO_URI),
+    BranchManagerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
